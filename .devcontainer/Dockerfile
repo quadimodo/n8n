@@ -1,6 +1,9 @@
 FROM n8nio/base:20
 
 ENV APK_MIRROR=http://mirrors.aliyun.com/alpine/
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk update && \
     apk add --no-cache --update openssh sudo shadow bash
 RUN echo node ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/node && chmod 0440 /etc/sudoers.d/node
