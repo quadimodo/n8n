@@ -3,7 +3,7 @@ volumes:
 
 services:
   postgres:
-    image: postgres:16-alpine
+    image: hub.quadimodo.space/library/postgres:16-alpine
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
